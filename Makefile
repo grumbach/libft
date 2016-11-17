@@ -6,14 +6,16 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/11/15 20:06:14 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/11/17 21:07:00 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ./srcs/ft_atoi.c \
+SRC = ./srcs/ft_abs.c \
+./srcs/ft_atoi.c \
 ./srcs/ft_bzero.c \
+./srcs/ft_gcd.c \
 ./srcs/ft_isalnum.c \
 ./srcs/ft_isalpha.c \
 ./srcs/ft_isascii.c \
@@ -43,6 +45,7 @@ SRC = ./srcs/ft_atoi.c \
 ./srcs/ft_putnbr_fd.c \
 ./srcs/ft_putstr.c \
 ./srcs/ft_putstr_fd.c \
+./srcs/ft_sqrt.c \
 ./srcs/ft_strcat.c \
 ./srcs/ft_strchr.c \
 ./srcs/ft_strclr.c \
@@ -72,8 +75,10 @@ SRC = ./srcs/ft_atoi.c \
 ./srcs/ft_tolower.c \
 ./srcs/ft_toupper.c
 
-SRCO = ./ft_atoi.o \
+SRCO = ./ft_abs.o \
+./ft_atoi.o \
 ./ft_bzero.o \
+./ft_gcd.o \
 ./ft_isalnum.o \
 ./ft_isalpha.o \
 ./ft_isascii.o \
@@ -103,6 +108,7 @@ SRCO = ./ft_atoi.o \
 ./ft_putnbr_fd.o \
 ./ft_putstr.o \
 ./ft_putstr_fd.o \
+./ft_sqrt.o \
 ./ft_strcat.o \
 ./ft_strchr.o \
 ./ft_strclr.o \
