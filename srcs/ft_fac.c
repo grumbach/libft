@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:50:34 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 17:04:20 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 17:43:06 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	ft_fac(int n)
 	if (n == 1)
 		return (1);
 	else
-		return (n * ft_recursive_factorial(n - 1));
+		return (n * ft_fac(n - 1));
 }

@@ -6,16 +6,16 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 17:11:27 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 17:16:09 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 17:43:20 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_intlen(int n)
 {
 	if (n < 0)
-		return (1 + intlen(-n));
+		return (1 + ft_intlen(-n));
 	if (n % 10 < 10)
 		return (1);
 	else
-		return (1 + intlen(n % 10));
+		return (1 + ft_intlen(n % 10));
 }

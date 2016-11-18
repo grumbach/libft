@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:33:10 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 17:03:40 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 17:43:34 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	ft_pow(int n, int power)
 	else if (power == 1)
 		return (n);
 	else
-		return (n * ft_recursive_power(n, power - 1));
+		return (n * ft_pow(n, power - 1));
 }
