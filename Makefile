@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/11/17 21:07:00 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/11/18 17:22:55 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME = libft.a
 SRC = ./srcs/ft_abs.c \
 ./srcs/ft_atoi.c \
 ./srcs/ft_bzero.c \
+./srcs/ft_fac.c \
 ./srcs/ft_gcd.c \
+./srcs/ft_intlen.c \
 ./srcs/ft_isalnum.c \
 ./srcs/ft_isalpha.c \
 ./srcs/ft_isascii.c \
@@ -37,6 +39,7 @@ SRC = ./srcs/ft_abs.c \
 ./srcs/ft_memdel.c \
 ./srcs/ft_memmove.c \
 ./srcs/ft_memset.c \
+./srcs/ft_pow.c \
 ./srcs/ft_putchar.c \
 ./srcs/ft_putchar_fd.c \
 ./srcs/ft_putendl.c \
@@ -78,7 +81,9 @@ SRC = ./srcs/ft_abs.c \
 SRCO = ./ft_abs.o \
 ./ft_atoi.o \
 ./ft_bzero.o \
+./ft_fac.o \
 ./ft_gcd.o \
+./ft_intlen.o \
 ./ft_isalnum.o \
 ./ft_isalpha.o \
 ./ft_isascii.o \
@@ -100,6 +105,7 @@ SRCO = ./ft_abs.o \
 ./ft_memdel.o \
 ./ft_memmove.o \
 ./ft_memset.o \
+./ft_pow.o \
 ./ft_putchar.o \
 ./ft_putchar_fd.o \
 ./ft_putendl.o \
