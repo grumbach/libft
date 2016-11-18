@@ -6,11 +6,11 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 20:51:17 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/17 21:01:25 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 23:28:14 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_gcd(int a, int b)
+int	ft_gcd(unsigned int a, unsigned int b)
 {
 	if (b > a)
 		return (ft_gcd(b, a));

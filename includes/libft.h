@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 17:21:00 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 23:30:26 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddend(t_list **alst, t_list *new);
 int					ft_abs(int n);
-int					ft_sqrt(int n);
-int					ft_gcd(int a, int b);
+int					ft_sqrt(unsigned int n);
+int					ft_gcd(unsigned int a, unsigned int b);
 int					ft_intlen(int n);
-int					ft_pow(int n, int power);
-int					ft_fac(int n);
+int					ft_pow(int n, unsigned int power);
+int					ft_fac(unsigned int n);
 
 #endif

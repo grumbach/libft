@@ -6,15 +6,13 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:33:10 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 22:20:59 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/18 23:30:14 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_pow(int n, int power)
+int	ft_pow(int n, unsigned int power)
 {
-	if (power < 0)
-		return (0);
-	else if (power == 0)
+	if (power == 0)
 		return (1);
 	else if (power == 1)
 		return (n);
