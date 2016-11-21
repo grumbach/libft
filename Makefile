@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/11/21 19:35:00 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/11/21 19:44:00 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -158,6 +158,8 @@ ${NAME}:
 	${CC} -I ${SRCH} -c ${SRC} ${CFLAGS}
 	ar rc ${NAME} ${SRCO}
 	ranlib ${NAME}
+
+.PHONY: clean fclean
 
 clean:
 	rm -f ${SRCO}
