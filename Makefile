@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/11/21 19:44:00 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/11/29 15:15:58 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC = ./srcs/ft_abs.c \
 ./srcs/ft_lstiter.c \
 ./srcs/ft_lstmap.c \
 ./srcs/ft_lstnew.c \
+./srcs/ft_lstsize.c \
 ./srcs/ft_memalloc.c \
 ./srcs/ft_memccpy.c \
 ./srcs/ft_memchr.c \
@@ -97,6 +98,7 @@ SRCO = ./ft_abs.o \
 ./ft_lstiter.o \
 ./ft_lstmap.o \
 ./ft_lstnew.o \
+./ft_lstsize.o \
 ./ft_memalloc.o \
 ./ft_memccpy.o \
 ./ft_memchr.o \

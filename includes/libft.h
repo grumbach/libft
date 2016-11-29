@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/18 23:30:26 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/29 15:13:00 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ int					ft_gcd(unsigned int a, unsigned int b);
 int					ft_intlen(int n);
 int					ft_pow(int n, unsigned int power);
 int					ft_fac(unsigned int n);
+int					ft_lstsize(t_list *lst);
 
 #endif
