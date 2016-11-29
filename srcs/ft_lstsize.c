@@ -6,9 +6,11 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:11:58 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/29 15:14:19 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/11/29 15:18:37 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 int		ft_lstsize(t_list *lst)
 {
