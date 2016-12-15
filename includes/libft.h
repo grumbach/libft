@@ -6,13 +6,26 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/29 15:13:00 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/15 06:09:54 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# define BUFF_SIZE 32
+
+typedef struct	s_gnl
+{
+	int			fd;
+	char		*buf;
+	int			readstatus;
+	int			endlpos;
+	int			errno;
+}				t_gnl;
 
 typedef struct		s_list
 {
@@ -88,5 +101,6 @@ int					ft_intlen(int n);
 int					ft_pow(int n, unsigned int power);
 int					ft_fac(unsigned int n);
 int					ft_lstsize(t_list *lst);
+int					get_next_line(const int fd, char **line);
 
 #endif
