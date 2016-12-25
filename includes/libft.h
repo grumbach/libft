@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/15 06:09:54 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/25 12:05:57 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int					ft_intlen(int n);
 int					ft_pow(int n, unsigned int power);
 int					ft_fac(unsigned int n);
 int					ft_lstsize(t_list *lst);
-int					get_next_line(const int fd, char **line);
+int					ft_get_next_line(const int fd, char **line);
+int					ft_strchrn(char *str, int c);
 
 #endif

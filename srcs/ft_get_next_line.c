@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 22:27:43 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/15 06:23:51 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/25 12:00:21 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ t_gnl	*list_manager(t_list **fdlist, int fd)
 	return (new_lst->content);
 }
 
-int		get_next_line(const int fd, char **line)
+int		ft_get_next_line(const int fd, char **line)
 {
 	static t_list	*fdlist = NULL;
 	char			*tmp_line;

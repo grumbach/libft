@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/12/15 06:40:19 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/12/25 12:05:01 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ ft_atoi.c \
 ft_bzero.c \
 ft_fac.c \
 ft_gcd.c \
+ft_get_next_line.c \
 ft_intlen.c \
 ft_isalnum.c \
 ft_isalpha.c \
@@ -52,6 +53,7 @@ ft_putstr_fd.c \
 ft_sqrt.c \
 ft_strcat.c \
 ft_strchr.c \
+ft_strchrn.c \
 ft_strclr.c \
 ft_strcmp.c \
 ft_strcpy.c \
@@ -77,8 +79,7 @@ ft_strstr.c \
 ft_strsub.c \
 ft_strtrim.c \
 ft_tolower.c \
-ft_toupper.c \
-get_next_line.c
+ft_toupper.c
 
 OBJ = $(SRC:.c=.o)
 
