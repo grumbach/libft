@@ -6,13 +6,16 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/12/25 12:05:01 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/12/27 00:19:35 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_abs.c \
+ft_arraynew.c \
+ft_arrayadd.c \
+ft_arraydel.c \
 ft_atoi.c \
 ft_bzero.c \
 ft_fac.c \
@@ -85,7 +88,7 @@ OBJ = $(SRC:.c=.o)
 
 SRCDIR = ./srcs/
 
-SRCH = ./includes/libft.h
+SRCH = ./includes/
 
 OBJH = ./includes/libft.h.gch
 

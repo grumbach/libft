@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/25 12:05:57 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/27 00:14:22 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,23 @@
 # include <unistd.h>
 
 # define BUFF_SIZE 32
+# define ARRAY_SIZE 4
 
-typedef struct	s_gnl
+typedef struct		s_array
 {
-	int			fd;
-	char		*buf;
-	int			readstatus;
-	int			endlpos;
-	int			errno;
-}				t_gnl;
+	void			*content;
+	size_t			typesize;
+	int				arraysize;
+}					t_array;
+
+typedef struct		s_gnl
+{
+	int				fd;
+	char			*buf;
+	int				readstatus;
+	int				endlpos;
+	int				errno;
+}					t_gnl;
 
 typedef struct		s_list
 {
@@ -103,5 +111,9 @@ int					ft_fac(unsigned int n);
 int					ft_lstsize(t_list *lst);
 int					ft_get_next_line(const int fd, char **line);
 int					ft_strchrn(char *str, int c);
+t_array				*ft_arrayadd(t_array *array, void *new, int index, \
+					size_t size);
+void				ft_arraydel(t_array **array);
+t_array				*ft_arraynew(size_t typesize);
 
 #endif
