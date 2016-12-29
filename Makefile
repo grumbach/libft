@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/12/29 22:31:03 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/12/29 23:55:02 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ ft_isalpha.c ft_strchrn.c ft_striter.c ft_strncat.c ft_strsplit.c \
 ft_isascii.c ft_strclr.c ft_striteri.c ft_strncmp.c ft_strstr.c \
 ft_isdigit.c ft_strcmp.c ft_strjoin.c ft_strncpy.c ft_strsub.c \
 ft_isprint.c ft_strcpy.c ft_strlcat.c ft_strnequ.c ft_strtrim.c \
-ft_itoa.c ft_strdel.c ft_strlen.c ft_strnew.c ft_tolower.c \
+ft_itoa.c ft_itoa_base.c ft_strdel.c ft_strlen.c ft_strnew.c ft_tolower.c \
 ft_strcat.c ft_strdup.c ft_strmap.c ft_strnstr.c ft_toupper.c
 
 OBJDIR = objs
