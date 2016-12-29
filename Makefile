@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/12/29 22:18:48 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/12/29 22:31:03 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,37 +62,45 @@ CC = gcc
 all:${NAME}
 
 ${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR}
-	ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR}
+	@echo Compiling ${NAME}
+	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR}
+	@echo Job\'s done
 
 ${OBJDIR}/%.o : ./srcs/ft_array/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_io/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_lst/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_maths/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_mem/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_str/%.c
-	/bin/mkdir -p ${OBJDIR}
-	${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 clean:
 	/bin/rm -Rf ${OBJDIR}
 
 fclean: clean
-	rm -f ${NAME}
+	/bin/rm -f ${NAME}
 
 re: fclean all
 
