@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/29 23:54:12 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/30 00:56:55 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_strchrn(char *str, int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+void				ft_strtolower(char *str);
+void				ft_strtoupper(char *str);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
 int					ft_isdigit(int c);
