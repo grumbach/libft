@@ -6,13 +6,13 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/30 00:53:06 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/30 00:55:41 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/30 01:02:22 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strtoupper(char *str)
+char	*ft_strtoupper(char *str)
 {
 	int		i;
 
@@ -22,4 +22,5 @@ void	ft_strtoupper(char *str)
 		str[i] = ft_toupper(str[i]);
 		i++;
 	}
+	return (str);
 }
