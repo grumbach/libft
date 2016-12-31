@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/30 01:13:05 by agrumbac         ###   ########.fr       */
+/*   Updated: 2016/12/31 19:12:41 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,7 @@ int					ft_intlen(int n);
 int					ft_pow(int n, unsigned int power);
 int					ft_fac(unsigned int n);
 int					ft_atoi(const char *str);
+long				ft_atol(const char *str);
+long long			ft_atoll(const char *str);
 
 #endif

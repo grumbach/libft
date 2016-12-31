@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2016/12/30 01:13:34 by agrumbac         ###   ########.fr        #
+#    Updated: 2016/12/31 19:13:08 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_lstaddend.c ft_lstdelone.c ft_lstmap.c ft_lstsize.c
 
 SRC_MATHS = \
 ft_abs.c ft_fac.c ft_intlen.c ft_sqrt.c \
-ft_atoi.c ft_gcd.c ft_pow.c
+ft_atoi.c ft_gcd.c ft_pow.c ft_atol.c ft_atoll.c
 
 SRC_MEM = \
 ft_bzero.c ft_memccpy.c ft_memcmp.c ft_memdel.c ft_memset.c \
