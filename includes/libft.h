@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/31 19:12:41 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/04 10:28:42 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void				*ft_memset(void *b, int c, size_t len);
 
 int					ft_strcmp(const char *s1, const char *s2);
 size_t				ft_strlen(const char *s);
-size_t				ft_strlen_utf8(wchar_t *s);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(const char *s1);
 char				*ft_strstr(const char *big, const char *little);
@@ -120,6 +119,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(long long value, int base);
+size_t				ft_wcslen(wchar_t *s);
 
 
 int					ft_abs(int n);
