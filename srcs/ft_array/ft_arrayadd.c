@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 18:30:39 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/27 00:20:13 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/06 09:02:01 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@ static int	ft_arraygrow(t_array *array)
 	return (1);
 }
 
-t_array		*ft_arrayadd(t_array *array, void *new, int index, size_t size)
+t_array		*ft_arrayadd(t_array *array, void *new, unsigned long long index, \
+			size_t size)
 {
-	int		i;
+	unsigned long long	i;
 
 	i = 0;
 	if (!new || !array)
 		return (NULL);
-	while (array->arraysize - index < (int)size)
+	while (array->arraysize - index < size)
 		if (!(ft_arraygrow(array)))
 			return (NULL);
 	ft_memcpy(array->content + (index * array->typesize), new, \

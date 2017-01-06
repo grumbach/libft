@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/01/04 10:28:42 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/06 09:00:44 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 typedef struct		s_array
 {
-	void			*content;
-	size_t			typesize;
-	int				arraysize;
+	void				*content;
+	size_t				typesize;
+	unsigned long long	arraysize;
 }					t_array;
 
-t_array				*ft_arrayadd(t_array *array, void *new, int index, \
-					size_t size);
+t_array				*ft_arrayadd(t_array *array, void *new, \
+					unsigned long long index, size_t size);
 void				ft_arraydel(t_array **array);
 t_array				*ft_arraynew(size_t typesize);
 
@@ -58,7 +58,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddend(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 
-
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(const char *s);
@@ -67,7 +66,6 @@ void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
-
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_memalloc(size_t size);
@@ -78,7 +76,6 @@ void				*ft_memchr(const void *s, int c, size_t n);
 void				ft_memdel(void **ap);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
-
 
 int					ft_strcmp(const char *s1, const char *s2);
 size_t				ft_strlen(const char *s);
@@ -120,7 +117,6 @@ int					ft_isprint(int c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(long long value, int base);
 size_t				ft_wcslen(wchar_t *s);
-
 
 int					ft_abs(int n);
 int					ft_sqrt(unsigned int n);
