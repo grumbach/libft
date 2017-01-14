@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/01/04 10:28:53 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/01/14 06:00:31 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,11 @@ ft_itoa.c ft_itoa_base.c ft_strdel.c ft_strlen.c ft_strnew.c \
 ft_strcat.c ft_strdup.c ft_strmap.c ft_strnstr.c ft_toupper.c ft_tolower.c \
 ft_strtolower.c ft_strtoupper.c ft_wcslen.c
 
+SRC_PRINTF = \
+ft_printf.c ft_printf_int.c ft_printf_str.c ft_printf_ptr.c \
+ft_printf_mod.c ft_printf_char.c ft_printf_padding.c ft_printf_itoa.c\
+ft_printf_buf.c
+
 OBJDIR = objs
 
 OBJ_ARRAY = $(addprefix ${OBJDIR}/, $(SRC_ARRAY:.c=.o))
@@ -56,15 +61,17 @@ OBJ_MEM = $(addprefix ${OBJDIR}/, $(SRC_MEM:.c=.o))
 
 OBJ_STR = $(addprefix ${OBJDIR}/, $(SRC_STR:.c=.o))
 
+OBJ_PRINTF = $(addprefix ${OBJDIR}/, $(SRC_PRINTF:.c=.o))
+
 CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
 all:${NAME}
 
-${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR}
+${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@echo Compiling ${NAME}
-	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR}
+	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@echo Job\'s done
 
 ${OBJDIR}/%.o : ./srcs/ft_array/%.c
@@ -93,6 +100,11 @@ ${OBJDIR}/%.o : ./srcs/ft_mem/%.c
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_str/%.c
+	@echo Compiling $@
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+
+${OBJDIR}/%.o : ./srcs/ft_io/ft_printf/%.c
 	@echo Compiling $@
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
