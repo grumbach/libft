@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 07:37:36 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/01/14 05:47:53 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/18 22:32:28 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "libft.h"
 
 # define FT_PRINTF_BUF_SIZE 256
+# define FT_PRINTF_FD 1
 
 # define FT_PRINTF_TYPES "sSpdiouxXDOUcCb"
 # define FT_PRINTF_FLAGS "#0-+ hhhllljz"
