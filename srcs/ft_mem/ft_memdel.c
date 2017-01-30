@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 18:26:15 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/15 18:45:22 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/30 21:37:25 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	ft_memdel(void **ap)
 {
 	if (ap)
+	{
 		free(*ap);
-	*ap = NULL;
+		*ap = NULL;
+	}
 }

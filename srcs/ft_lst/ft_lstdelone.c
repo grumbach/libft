@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 21:25:36 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/11/16 15:49:36 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/01/30 21:40:03 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 	{
 		del((*alst)->content, (*alst)->content_size);
 		free(*alst);
+		*alst = NULL;
 	}
-	*alst = NULL;
 }
