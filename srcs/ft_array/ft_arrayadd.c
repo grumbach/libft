@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 18:30:39 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/01/06 09:02:01 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/02/02 09:30:21 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ static int	ft_arraygrow(t_array *array)
 t_array		*ft_arrayadd(t_array *array, void *new, unsigned long long index, \
 			size_t size)
 {
-	unsigned long long	i;
-
-	i = 0;
 	if (!new || !array)
 		return (NULL);
 	while (array->arraysize - index < size)
