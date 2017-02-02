@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/01/14 05:47:37 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/02/02 13:48:51 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddend(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
+t_list				*ft_listsort(t_list *lst, int (*cmp)(void*, void*));
 
 int					ft_printf(const char *format, ...);
 void				ft_putchar(char c);

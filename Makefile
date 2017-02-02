@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/01/14 06:00:31 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/02/02 13:47:27 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ft_putchar_fd.c ft_putnbr.c ft_putstr_fd.c
 
 SRC_LST = \
 ft_lstadd.c ft_lstdel.c ft_lstiter.c ft_lstnew.c \
-ft_lstaddend.c ft_lstdelone.c ft_lstmap.c ft_lstsize.c
+ft_lstaddend.c ft_lstdelone.c ft_lstmap.c ft_lstsize.c ft_lstsort.c
 
 SRC_MATHS = \
 ft_abs.c ft_fac.c ft_intlen.c ft_sqrt.c \
