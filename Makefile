@@ -6,14 +6,14 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/02/18 00:24:06 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/02/18 02:58:33 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC_ARRAY = \
-ft_arrayadd.c ft_arraydel.c ft_arraynew.c
+ft_arrayadd.c ft_arraydel.c ft_arraynew.c ft_arrayappend.c ft_arrayread.c
 
 SRC_IO = \
 ft_get_next_line.c ft_putendl.c ft_putnbr_fd.c \

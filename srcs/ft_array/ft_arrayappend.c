@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrayadd.c                                      :+:      :+:    :+:   */
+/*   ft_arrayappend.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agrumbac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/18 18:30:39 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/18 02:57:54 by agrumbac         ###   ########.fr       */
+/*   Created: 2017/02/18 02:30:00 by agrumbac          #+#    #+#             */
+/*   Updated: 2017/02/18 02:52:35 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ static int	ft_arraygrow(t_array *array)
 	return (1);
 }
 
-t_array		*ft_arrayadd(t_array *array, void *new, unsigned long long index, \
-			unsigned int size)
+t_array		*ft_arrayappend(t_array *array, void *new, unsigned int size)
 {
+	static unsigned long long	index = 0;
+
 	if (!new || !array)
 		return (NULL);
 	while (array->arraysize - (index * array->typesize) < \
@@ -39,5 +40,6 @@ t_array		*ft_arrayadd(t_array *array, void *new, unsigned long long index, \
 			return (NULL);
 	ft_memcpy(array->content + (index * array->typesize), new, \
 		size * array->typesize);
+	index += size;
 	return (array);
 }

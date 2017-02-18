@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/18 00:24:34 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/02/18 03:03:28 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ typedef struct		s_array
 }					t_array;
 
 t_array				*ft_arrayadd(t_array *array, void *new, \
-					unsigned long long index, size_t size);
+					unsigned long long index, unsigned int size);
 void				ft_arraydel(t_array **array);
 t_array				*ft_arraynew(size_t typesize);
+t_array				*ft_arrayappend(t_array *array, void *new, \
+					unsigned int size);
+void				*ft_arrayread(t_array *array, unsigned long long index);
 
 typedef struct		s_gnl
 {
