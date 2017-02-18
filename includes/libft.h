@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/18 03:03:28 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/02/18 14:07:48 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strtrim(const char *s);
-char				*ft_strchr(const char *s, int c);
+char				*ft_strchr(char *s, int c);
 void				ft_strclr(char *s);
 int					ft_strequ(const char *s1, const char *s2);
 void				ft_striter(char *s, void (*f)(char *));
