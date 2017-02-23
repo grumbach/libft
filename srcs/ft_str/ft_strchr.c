@@ -6,7 +6,7 @@
 /*   By: agrumbac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:33:08 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/18 14:29:17 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/02/23 01:13:36 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(char *s, int c)
 {
 	while (*s)
 	{
-		if (!(*s ^ (0xf & c)))
+		if (!(*s ^ c))
 			return (s);
 		s++;
 	}
-	if (!(*s ^ (0xf & c)))
+	if (!(*s ^ c))
 		return (s);
 	return (0);
 }
