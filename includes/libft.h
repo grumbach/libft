@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/18 14:07:48 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/07 18:45:26 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,9 @@ char				*ft_itoa_base(long long value, int base);
 size_t				ft_wcslen(wchar_t *s);
 char				*ft_strlaststr(const char *big, const char *little);
 char				*ft_strnjoin(int n, ...);
+char				*ft_strjoinnfree(char *s1, char *s2, size_t len, \
+					char free12b);
+char				*ft_strndup(const char *s, size_t n);
 
 long long			ft_abs(long long n);
 int					ft_sqrt(unsigned int n);
