@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 02:03:17 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/08 02:59:50 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/08 20:53:42 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,18 @@ static int		free_list(t_list **p, t_list **curr)
 static int		line_assign(const int ret, const t_list *curr, \
 				char **line)
 {
+	char		*tmp;
+
+	tmp = NULL;
 	if (ret)
 	{
-		if (!(*line = ft_strndup(curr->content, ret)))
+		if (!(tmp = ft_strndup(curr->content, ret)))
 			return (0);
 	}
 	else if (((char*)curr->content)[0] == '\n')
-		if (!(*line = ft_strnew(0)))
+		if (!(tmp = ft_strnew(0)))
 			return (0);
+	*line = tmp;
 	return (1);
 }
 
