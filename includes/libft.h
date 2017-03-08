@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/07 18:45:26 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/08 02:05:14 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,6 @@ t_array				*ft_arraynew(size_t typesize);
 t_array				*ft_arrayappend(t_array *array, void *new, \
 					unsigned int size);
 void				*ft_arrayread(t_array *array, unsigned long long index);
-
-typedef struct		s_gnl
-{
-	int				fd;
-	char			*buf;
-	int				readstatus;
-	int				endlpos;
-	int				errno;
-}					t_gnl;
 
 int					ft_get_next_line(const int fd, char **line);
 

@@ -5,120 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 22:27:43 by agrumbac          #+#    #+#             */
-/*   Updated: 2016/12/25 12:00:21 by agrumbac         ###   ########.fr       */
+/*   Created: 2017/03/08 02:03:17 by agrumbac          #+#    #+#             */
+/*   Updated: 2017/03/08 02:04:27 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int		read_more(const int fd, t_gnl *gnl)
+static t_list	*fd_manager(t_list **p, int fd)
 {
-	char	tmp_buf[BUFF_SIZE + 1];
-	char	*tmp;
+	t_list	*curr;
 
-	gnl->readstatus = read(fd, tmp_buf, BUFF_SIZE);
-	if (gnl->readstatus == -1)
+	curr = *p;
+	while (curr)
 	{
-		gnl->errno = -1;
-		return (-42);
+		if (fd == (int)curr->content_size)
+			return (curr);
+		curr = curr->next;
 	}
-	if (gnl->readstatus == 0)
-	{
-		if (gnl->buf[0] != '\0')
-			return (0);
-		ft_memdel((void**)&(gnl->buf));
-		gnl->errno = 0;
-		return (-42);
-	}
-	tmp_buf[gnl->readstatus] = '\0';
-	tmp = gnl->buf;
-	gnl->buf = ft_strjoin(gnl->buf, tmp_buf);
-	free(tmp);
-	return (1);
+	curr = ft_lstnew("\0", 1);
+	curr->content_size = fd;
+	if (*p)
+		ft_lstaddend(p, curr);
+	else
+		*p = curr;
+	return (curr);
 }
 
-char	*line_seeker(t_gnl *gnl)
+static int		free_list(t_list **p, t_list **curr)
 {
-	char	*tmp_line;
-	char	*tmp;
+	t_list		*tmp;
 
-	while (!(ft_strchr(gnl->buf, '\n')))
+	tmp = *p;
+	if (tmp == *curr)
+		*p = tmp->next;
+	else
 	{
-		if (read_more(gnl->fd, gnl) == -42)
-			return (NULL);
-		if (!gnl->buf)
-			return (NULL);
-		if (gnl->readstatus == 0)
-		{
-			gnl->readstatus = 1;
-			tmp_line = ft_strdup(gnl->buf);
-			ft_memdel((void**)&(gnl->buf));
-			return (tmp_line);
-		}
+		while (tmp->next && tmp->next != *curr)
+			tmp = tmp->next;
+		tmp->next = ((t_list*)*curr)->next;
 	}
-	gnl->endlpos = (int)(ft_strchr(gnl->buf, '\n') - gnl->buf);
-	if (!(tmp_line = ft_strnew(gnl->endlpos)))
-		return (NULL);
-	ft_memccpy(tmp_line, gnl->buf, '\n', gnl->endlpos);
-	tmp = gnl->buf;
-	gnl->buf = ft_strdup((gnl->buf + gnl->endlpos + 1));
-	free(tmp);
-	return (tmp_line);
+	ft_memdel((void**)&(((t_list*)*curr)->content));
+	ft_memdel((void**)curr);
+	return (0);
 }
 
-void	gnl_init(t_gnl *gnl, int fd)
+int				ft_get_next_line(const int fd, char **line)
 {
-	gnl->fd = fd;
-	gnl->buf = NULL;
-	gnl->readstatus = 1;
-	gnl->errno = -1;
-}
+	static t_list	*p = NULL;
+	t_list			*curr;
+	char			*tmp;
+	char			buf[BUFF_SIZE + 1];
+	int				ret;
 
-t_gnl	*list_manager(t_list **fdlist, int fd)
-{
-	t_list	*new_lst;
-	t_gnl	*new_gnl;
-
-	if (!(new_lst = *fdlist))
-	{
-		if (!(new_gnl = (t_gnl*)malloc(sizeof(t_gnl))) || \
-			!(*fdlist = ft_lstnew(new_gnl, sizeof(t_gnl))))
-			return (NULL);
-		free(new_gnl);
-		gnl_init(((t_gnl*)((*fdlist)->content)), fd);
-	}
-	while (new_lst)
-		if (((t_gnl*)(new_lst->content))->fd == fd)
-			return (new_lst->content);
-		else
-			new_lst = new_lst->next;
-	if (!(new_gnl = (t_gnl*)malloc(sizeof(t_gnl))) || \
-		!(new_lst = ft_lstnew(new_gnl, sizeof(t_gnl))))
-		return (NULL);
-	free(new_gnl);
-	gnl_init(((t_gnl*)((new_lst)->content)), fd);
-	ft_lstaddend(fdlist, new_lst);
-	return (new_lst->content);
-}
-
-int		ft_get_next_line(const int fd, char **line)
-{
-	static t_list	*fdlist = NULL;
-	char			*tmp_line;
-	int				status;
-
-	if (!line || fd < 0)
+	if (fd < 0 || !line || read(fd, buf, 0) < 0)
 		return (-1);
-	if (!(list_manager(&fdlist, fd)->buf))
-		if (!(list_manager(&fdlist, fd)->buf = ft_strnew(0)))
+	curr = fd_manager(&p, fd);
+	while (!ft_strchr(curr->content, '\n') && (ret = read(fd, buf, BUFF_SIZE)))
+		if (ret == -1)
 			return (-1);
-	if (!(list_manager(&fdlist, fd)->readstatus))
-		return (0);
-	tmp_line = line_seeker(list_manager(&fdlist, fd));
-	*line = tmp_line;
-	if (!(tmp_line))
-		return (list_manager(&fdlist, fd)->errno);
-	status = list_manager(&fdlist, fd)->readstatus;
-	return (status > 0 ? 1 : status);
+		else
+			curr->content = ft_strjoinnfree(curr->content, buf, ret, '1');
+	ret = 0;
+	while (((char*)curr->content)[ret] && ((char*)curr->content)[ret] != '\n')
+		++ret;
+	if (ret)
+		*line = ft_strndup(curr->content, ret);
+	else if (((char*)curr->content)[0] == '\n')
+		*line = ft_strnew(0);
+	(((char*)curr->content)[ret] == '\n') ? ++ret : 0;
+	tmp = curr->content;
+	curr->content = ft_strjoinnfree(tmp + ret, tmp, 0, '2');
+	return (ret ? 1 : free_list(&p, &curr));
 }
