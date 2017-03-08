@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 02:03:17 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/08 02:04:27 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/08 02:59:50 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static t_list	*fd_manager(t_list **p, int fd)
 			return (curr);
 		curr = curr->next;
 	}
-	curr = ft_lstnew("\0", 1);
+	if (!(curr = ft_lstnew("\0", 1)))
+		return (NULL);
 	curr->content_size = fd;
 	if (*p)
 		ft_lstaddend(p, curr);
@@ -50,6 +51,20 @@ static int		free_list(t_list **p, t_list **curr)
 	return (0);
 }
 
+static int		line_assign(const int ret, const t_list *curr, \
+				char **line)
+{
+	if (ret)
+	{
+		if (!(*line = ft_strndup(curr->content, ret)))
+			return (0);
+	}
+	else if (((char*)curr->content)[0] == '\n')
+		if (!(*line = ft_strnew(0)))
+			return (0);
+	return (1);
+}
+
 int				ft_get_next_line(const int fd, char **line)
 {
 	static t_list	*p = NULL;
@@ -69,12 +84,11 @@ int				ft_get_next_line(const int fd, char **line)
 	ret = 0;
 	while (((char*)curr->content)[ret] && ((char*)curr->content)[ret] != '\n')
 		++ret;
-	if (ret)
-		*line = ft_strndup(curr->content, ret);
-	else if (((char*)curr->content)[0] == '\n')
-		*line = ft_strnew(0);
+	if (!(line_assign(ret, curr, line)))
+		return (-1);
 	(((char*)curr->content)[ret] == '\n') ? ++ret : 0;
 	tmp = curr->content;
-	curr->content = ft_strjoinnfree(tmp + ret, tmp, 0, '2');
+	if (!(curr->content = ft_strjoinnfree(tmp + ret, tmp, 0, '2')))
+		return (-1);
 	return (ret ? 1 : free_list(&p, &curr));
 }

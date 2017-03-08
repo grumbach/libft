@@ -6,7 +6,7 @@
 /*   By: agrumbac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 18:24:26 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/07 19:17:38 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/08 02:44:24 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strjoinnfree(char *s1, char *s2, size_t len, char free12b)
 	char	*tmp1;
 	char	*tmp2;
 
-	s = ft_strnew(ft_strlen(s1) + len + 1);
+	if (!(s = ft_strnew(ft_strlen(s1) + len + 1)))
+		return (NULL);
 	ret = s;
 	tmp1 = s1;
 	tmp2 = s2;
