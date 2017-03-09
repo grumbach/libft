@@ -1,5 +1,5 @@
 # 42 libft
-## My personnal lib
+## My personal lib
 
 * Featuring lots of memory and string management tools
 * Comes with a speedy printf that doesn't use MALLOC
