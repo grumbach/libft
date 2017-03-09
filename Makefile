@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/03/09 11:07:14 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/03/09 11:18:15 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,14 +77,11 @@ X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
-start:
-	@echo ${W}Dont panic : nothing to be done...${X}
-
 all: ${NAME}
 
-${NAME}: start ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
-	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
+${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@echo ${UP}${CUT}${B}Compiling [${NAME}]...${X}
+	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@echo ${G}Success"   "[${NAME}]${X}
 
 ${OBJDIR}/%.o : ./srcs/ft_array/%.c
