@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/03/07 18:45:54 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/03/09 11:07:14 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,53 +68,67 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
-all:${NAME}
+Y = "\033[33m"
+R = "\033[31m"
+G = "\033[32m"
+B = "\033[34m"
+W = "\033[5;32m"
+X = "\033[0m"
+UP = "\033[A"
+CUT = "\033[K"
 
-${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
-	@echo Compiling ${NAME}
+start:
+	@echo ${W}Dont panic : nothing to be done...${X}
+
+all: ${NAME}
+
+${NAME}: start ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
-	@echo Job\'s done
+	@echo ${UP}${CUT}${B}Compiling [${NAME}]...${X}
+	@echo ${G}Success"   "[${NAME}]${X}
 
 ${OBJDIR}/%.o : ./srcs/ft_array/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_io/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_lst/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_maths/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_mem/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_str/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 ${OBJDIR}/%.o : ./srcs/ft_io/ft_printf/%.c
-	@echo Compiling $@
+	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
 
 clean:
-	/bin/rm -Rf ${OBJDIR}
+	@echo ${R}Cleaning"  "[${OBJDIR}]...${X}
+	@/bin/rm -Rf ${OBJDIR}
 
 fclean: clean
-	/bin/rm -f ${NAME}
+	@echo ${R}Cleaning"  "[${NAME}]...${X}
+	@/bin/rm -f ${NAME}
 
 re: fclean all
 
