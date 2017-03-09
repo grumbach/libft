@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/08 02:05:14 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/03/09 13:15:05 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 16
 # define ARRAY_SIZE 4
 
 typedef struct		s_array
