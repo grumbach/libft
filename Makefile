@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/03/09 13:14:19 by agrumbac         ###   ########.fr        #
+#    Updated: 2017/03/11 00:31:30 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
+LFT = includes/libft.h
+FTP = includes/ft_printf.h
+
 Y = "\033[33m"
 R = "\033[31m"
 G = "\033[32m"
@@ -77,46 +80,53 @@ UP = "\033[A"
 CUT = "\033[K"
 
 all: ${NAME}
-
-${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
-	@echo ${UP}${CUT}${B}Compiling [${NAME}]...${X}
-	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
 	@echo ${G}Success"   "[${NAME}]${X}
 
-${OBJDIR}/%.o : ./srcs/ft_array/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
-	@/bin/mkdir -p ${OBJDIR}
-	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+${NAME}: ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
+	@ar rcs ${NAME} ${OBJ_ARRAY} ${OBJ_IO} ${OBJ_LST} ${OBJ_MATHS} ${OBJ_MEM} ${OBJ_STR} ${OBJ_PRINTF}
+	@echo ${B}Compiling [${NAME}]...${X}
 
-${OBJDIR}/%.o : ./srcs/ft_io/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_array/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
-${OBJDIR}/%.o : ./srcs/ft_lst/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_io/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
-${OBJDIR}/%.o : ./srcs/ft_maths/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_lst/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
-${OBJDIR}/%.o : ./srcs/ft_mem/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_maths/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
-${OBJDIR}/%.o : ./srcs/ft_str/%.c includes/libft.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_mem/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
-${OBJDIR}/%.o : ./srcs/ft_io/ft_printf/%.c includes/ft_printf.h
-	@echo ${UP}${CUT}${Y}Compiling [$@]...${X}
+${OBJDIR}/%.o : ./srcs/ft_str/%.c ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
 	@/bin/mkdir -p ${OBJDIR}
 	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
+
+${OBJDIR}/%.o : ./srcs/ft_io/ft_printf/%.c ${FTP} ${LFT}
+	@echo ${Y}Compiling [$@]...${X}
+	@/bin/mkdir -p ${OBJDIR}
+	@${CC} ${CFLAGS} -I./includes -c -o $@ $<
+	@printf ${UP}${CUT}
 
 clean:
 	@echo ${R}Cleaning"  "[${OBJDIR}]...${X}
