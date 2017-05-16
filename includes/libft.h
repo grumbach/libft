@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/03/09 13:15:05 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/05/16 22:12:01 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(long long value, int base);
+void				ft_printf_itoa_s(int value, int base, char *numb);
 size_t				ft_wcslen(wchar_t *s);
 char				*ft_strlaststr(const char *big, const char *little);
 char				*ft_strnjoin(int n, ...);
