@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base_s.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agrumbac <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 21:52:54 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/05/16 22:05:03 by agrumbac         ###   ########.fr       */
+/*   Updated: 2017/05/16 22:38:31 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void		itoa_base(unsigned int value, unsigned int base, \
 	numb[len - i] = (value % base) + '0';
 }
 
-void			ft_printf_itoa_s(int value, int base, char *numb)
+void			ft_itoa_base_s(int value, int base, char *numb)
 {
 	if (base == 10 && value < 0)
 	{
