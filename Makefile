@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2017/05/16 22:06:37 by agrumbac         ###   ########.fr        #
+#    Updated: 2018/04/19 07:30:39 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ ft_isprint.c ft_strcpy.c ft_strlcat.c ft_strnequ.c ft_strtrim.c \
 ft_itoa.c ft_itoa_base.c ft_strdel.c ft_strlen.c ft_strnew.c \
 ft_strcat.c ft_strdup.c ft_strmap.c ft_strnstr.c ft_toupper.c ft_tolower.c \
 ft_strtolower.c ft_strtoupper.c ft_wcslen.c ft_strlaststr.c ft_strnjoin.c \
-ft_strndup.c ft_strjoinnfree.c ft_itoa_base_s.c
+ft_strndup.c ft_strjoinnfree.c ft_itoa_base_s.c ft_strnlen.c
 
 SRC_PRINTF = \
 ft_printf.c ft_printf_int.c ft_printf_str.c ft_printf_ptr.c \

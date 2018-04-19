@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 17:29:36 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/01/14 06:01:08 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/04/19 07:33:47 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,10 @@ static void	char_star(t_buf *buf, t_format *info, char *t)
 {
 	size_t	len;
 
-	len = ft_strlen(t);
 	if (info->precision >= 0)
-		len = (info->precision > (int)len ? len : info->precision);
+		len = ft_strnlen(t, info->precision);
+	else
+		len = ft_strlen(t);
 	if (ft_strchr(info->flags, '-'))
 	{
 		if (!(ft_printf_buf_add(buf, t, len)))

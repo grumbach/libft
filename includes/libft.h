@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/05/16 22:33:47 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/04/19 07:27:40 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void				*ft_memset(void *b, int c, size_t len);
 
 int					ft_strcmp(const char *s1, const char *s2);
 size_t				ft_strlen(const char *s);
+size_t				ft_strnlen(const char *s, const size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(const char *s1);
 char				*ft_strstr(const char *big, const char *little);
