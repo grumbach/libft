@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2018/06/21 16:16:41 by agrumbac         ###   ########.fr        #
+#    Updated: 2018/06/21 16:25:56 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS = -Wall -Wextra -Werror -O2 -Iincludes
 ############################## SRC #############################################
 
 SRC_IO = \
-	ft_cat.s ft_putchar.s ft_puts.s ft_putstr.s
+	ft_cat.s ft_perr.s ft_putchar.s ft_puts.s ft_putstr.s
 
 SRC_PRINTF = \
 	ft_printf.c ft_printf_int.c ft_printf_str.c ft_printf_ptr.c \
@@ -68,7 +68,7 @@ X = "\033[0m"
 
 ############################## BUILD ###########################################
 
-# .SILENT:
+.SILENT:
 
 all: ${NAME}
 

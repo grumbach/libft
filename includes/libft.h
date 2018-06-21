@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2018/06/21 16:15:42 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:25:33 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 */
 
 void				ft_cat(const int fd);
+void				ft_perr(const char *s);
 void				ft_putchar(char c);
 int					ft_puts(const char *s);
 void				ft_putstr(char const *s);
