@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2018/06/21 16:25:33 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/06/25 16:16:27 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
+
+/*
+** ft_btree
+*/
+
+//coming soon...
 
 /*
 ** ft_io
@@ -32,7 +39,7 @@ int					ft_printf(const char *format, ...);
 ** ft_maths
 */
 
-long long			ft_abs(long long n);
+int					ft_abs(int n);
 int					ft_sqrt(unsigned int n);
 int					ft_gcd(unsigned int a, unsigned int b);
 int					ft_intlen(int n);

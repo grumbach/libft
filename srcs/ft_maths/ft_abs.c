@@ -6,15 +6,17 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 20:32:54 by agrumbac          #+#    #+#             */
-/*   Updated: 2017/02/04 03:44:16 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/06/25 16:16:47 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long long	ft_abs(long long n)
+#include "libft.h"
+
+int		ft_abs(int n)
 {
 	if (n > 0)
 		return (n);
-	else if (n != -9223372036854775807)
+	else if (n != INT_MIN)
 		return (-n);
 	return (-1);
 }
