@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2018/06/25 16:16:27 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/06/26 16:55:14 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,17 @@
 ** ft_btree
 */
 
-//coming soon...
+typedef struct		s_btree
+{
+	struct s_btree	*left;
+	struct s_btree	*right;
+}					t_btree;
+
+void				*ft_btree_find(t_btree *btree, const void *target, \
+						int (*cmp)(const void *, const void *));
+void				ft_btree_iter(t_btree *btree, void (*f)(void *));
+void				ft_btree_del(t_btree **btree, void (*del)(void *));
+void				ft_btree_recursivedel(t_btree **btree, void (*del)(void *));
 
 /*
 ** ft_io

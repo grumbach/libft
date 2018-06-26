@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2018/06/21 16:25:56 by agrumbac         ###   ########.fr        #
+#    Updated: 2018/06/25 18:58:00 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror -O2 -Iincludes
 
 ############################## SRC #############################################
+
+SRC_BTREE = \
+	ft_btree_find.c ft_btree_iter.c ft_btree_del.c ft_btree_recursivedel.c
 
 SRC_IO = \
 	ft_cat.s ft_perr.s ft_putchar.s ft_puts.s ft_putstr.s
@@ -51,6 +54,7 @@ SRC_STR = \
 SRC = \
 	$(addprefix srcs/ft_io/, ${SRC_IO}) \
 	$(addprefix srcs/ft_io/ft_printf/, ${SRC_PRINTF}) \
+	$(addprefix srcs/ft_btree/, ${SRC_BTREE}) \
 	$(addprefix srcs/ft_maths/, ${SRC_MATHS}) \
 	$(addprefix srcs/ft_mem/, ${SRC_MEM}) \
 	$(addprefix srcs/ft_str/, ${SRC_STR})
