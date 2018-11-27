@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2018/06/25 18:58:00 by agrumbac         ###   ########.fr        #
+#    Updated: 2018/11/27 22:58:56 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = libft.a
 
-AS = ~/homebrew/bin/nasm
+AS = nasm
 
 ASFLAGS = -f macho64 -g
 
