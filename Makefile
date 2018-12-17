@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 17:08:23 by agrumbac          #+#    #+#              #
-#    Updated: 2018/11/27 22:58:56 by agrumbac         ###   ########.fr        #
+#    Updated: 2018/12/17 02:39:54 by agrumbac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRC_MEM = \
 
 SRC_STR = \
 	ft_atoi.s ft_atoi_base.c ft_atol.c ft_atoll.s ft_isalnum.s ft_isalpha.s \
-	ft_isascii.s ft_isdigit.s ft_isprint.s ft_isupper.c ft_itoa_base_s.c \
+	ft_isascii.s ft_isdigit.s ft_isprint.s ft_isupper.c ft_isspace.c\
+	ft_itoa_base_s.c \
 	ft_strcat.s ft_strchr.s ft_strchrn.c ft_strclr.c ft_strcmp.c ft_strcpy.c \
 	ft_strdup.s ft_strequ.c ft_striter.c ft_striteri.c ft_strlaststr.c \
 	ft_strlcat.c ft_strlen.s ft_strncat.c ft_strncmp.s ft_strncpy.s \

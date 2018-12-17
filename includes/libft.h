@@ -6,7 +6,7 @@
 /*   By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:10:16 by agrumbac          #+#    #+#             */
-/*   Updated: 2018/06/26 16:55:14 by agrumbac         ###   ########.fr       */
+/*   Updated: 2018/12/17 02:39:04 by agrumbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_isupper(int c);
 void				ft_itoa_base_s(int value, int base, char *numb);
 char				*ft_strcat(char *s1, const char *s2);
